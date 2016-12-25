@@ -10,7 +10,6 @@ import java.awt.Font;
 
 public class ScorePanel extends JPanel
 {
-	private SpringLayout baseLayout;
 	private JLabel titleLabel;
 	private JLabel secondTitleLabel;
 	private JTextField player1Field;
@@ -25,59 +24,47 @@ public class ScorePanel extends JPanel
 	private JTextField player4Points;
 	private JTextField player5Points;
 	private JTextField player6Points;
-	private JSlider player1Phase;
+	private JProgressBar player1Phase;
 	
 	public ScorePanel(ScoreController baseController)
 	{
-		this.baseLayout = new SpringLayout();
 		this.titleLabel = new JLabel("Phase 10");
-		baseLayout.putConstraint(SpringLayout.NORTH, titleLabel, 26, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 560, SpringLayout.WEST, this);
+		titleLabel.setBounds(560, 26, 164, 42);
 		titleLabel.setFont(new Font("Dialog", Font.BOLD, 35));
 		this.secondTitleLabel = new JLabel("Scorecard");
-		baseLayout.putConstraint(SpringLayout.NORTH, secondTitleLabel, 6, SpringLayout.SOUTH, titleLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, secondTitleLabel, 608, SpringLayout.WEST, this);
+		secondTitleLabel.setBounds(608, 74, 77, 19);
 		secondTitleLabel.setFont(new Font("Dialog", Font.BOLD, 15));
 		this.player1Field = new JTextField("Player 1");
-		baseLayout.putConstraint(SpringLayout.WEST, player1Field, 152, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player1Field, -553, SpringLayout.SOUTH, this);
+		player1Field.setBounds(67, 121, 59, 26);
 		this.player2Field = new JTextField("Player 2");
-		baseLayout.putConstraint(SpringLayout.NORTH, player2Field, 0, SpringLayout.NORTH, player1Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player2Field, 106, SpringLayout.EAST, player1Field);
+		player2Field.setBounds(272, 121, 59, 26);
 		this.player3Field = new JTextField("Player 3");
-		baseLayout.putConstraint(SpringLayout.NORTH, player3Field, 0, SpringLayout.NORTH, player1Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player3Field, 119, SpringLayout.EAST, player2Field);
+		player3Field.setBounds(493, 121, 59, 26);
 		this.player4Field = new JTextField("Player 4");
-		baseLayout.putConstraint(SpringLayout.NORTH, player4Field, 0, SpringLayout.NORTH, player1Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player4Field, 216, SpringLayout.EAST, player3Field);
+		player4Field.setBounds(734, 121, 59, 26);
 		this.player5Field = new JTextField("Player 5");
-		baseLayout.putConstraint(SpringLayout.NORTH, player5Field, 306, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, player5Field, 540, SpringLayout.WEST, this);
+		player5Field.setBounds(981, 121, 59, 26);
 		this.player6Field = new JTextField("Player 6");
-		baseLayout.putConstraint(SpringLayout.NORTH, player6Field, 0, SpringLayout.NORTH, player5Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player6Field, 39, SpringLayout.EAST, player5Field);
+		player6Field.setBounds(1173, 121, 59, 26);
 		this.player1Points = new JTextField(4);
-		baseLayout.putConstraint(SpringLayout.NORTH, player1Points, 102, SpringLayout.SOUTH, player1Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player1Points, 0, SpringLayout.WEST, player1Field);
+		player1Points.setBounds(67, 188, 58, 26);
 		this.player2Points = new JTextField(4);
-		baseLayout.putConstraint(SpringLayout.NORTH, player2Points, 31, SpringLayout.SOUTH, player2Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player2Points, 334, SpringLayout.WEST, this);
+		player2Points.setBounds(334, 178, 58, 26);
 		this.player3Points = new JTextField(4);
-		baseLayout.putConstraint(SpringLayout.NORTH, player3Points, 0, SpringLayout.NORTH, player2Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player3Points, 173, SpringLayout.EAST, player2Points);
+		player3Points.setBounds(565, 178, 58, 26);
 		this.player4Points = new JTextField(4);
-		baseLayout.putConstraint(SpringLayout.NORTH, player4Points, 31, SpringLayout.SOUTH, player4Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player4Points, 269, SpringLayout.EAST, player3Points);
+		player4Points.setBounds(718, 178, 58, 26);
 		this.player5Points = new JTextField(4);
-		baseLayout.putConstraint(SpringLayout.NORTH, player5Points, 22, SpringLayout.SOUTH, player5Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player5Points, 0, SpringLayout.WEST, titleLabel);
+		player5Points.setBounds(892, 178, 58, 26);
 		this.player6Points = new JTextField(4);
-		baseLayout.putConstraint(SpringLayout.NORTH, player6Points, 0, SpringLayout.NORTH, player5Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player6Points, 99, SpringLayout.EAST, player5Points);
-		this.player1Phase = new JSlider(1);
-		baseLayout.putConstraint(SpringLayout.NORTH, player1Phase, 33, SpringLayout.NORTH, titleLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 63, SpringLayout.WEST, this);
-
+		player6Points.setBounds(1071, 178, 58, 26);
+		this.player1Phase = new JProgressBar();
+		player1Phase.setBounds(24, 156, 146, 20);
+		player1Phase.setStringPainted(true);
+		player1Phase.setString("0");
+		player1Phase.setMaximum(10);
+		player1Phase.setValue(1);
+		
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -85,9 +72,9 @@ public class ScorePanel extends JPanel
 	
 	private void setupPanel()
 	{
-		this.setLayout(baseLayout);
 		this.setPreferredSize(new Dimension(1300, 700));
 		this.setBackground(Color.GRAY);
+		setLayout(null);
 	
 		this.add(titleLabel);
 		this.add(secondTitleLabel);
