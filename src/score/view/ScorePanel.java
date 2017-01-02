@@ -24,7 +24,6 @@ public class ScorePanel extends JPanel
 	private JTextField player4Points;
 	private JTextField player5Points;
 	private JTextField player6Points;
-	private JProgressBar player1Phase;
 	
 	public ScorePanel(ScoreController baseController)
 	{
@@ -58,12 +57,6 @@ public class ScorePanel extends JPanel
 		player5Points.setBounds(892, 178, 58, 26);
 		this.player6Points = new JTextField(4);
 		player6Points.setBounds(1071, 178, 58, 26);
-		this.player1Phase = new JProgressBar();
-		player1Phase.setBounds(24, 156, 146, 20);
-		player1Phase.setStringPainted(true);
-		player1Phase.setString("0");
-		player1Phase.setMaximum(10);
-		player1Phase.setValue(1);
 		
 		setupPanel();
 		setupLayout();
@@ -90,8 +83,6 @@ public class ScorePanel extends JPanel
 		this.add(player4Points);
 		this.add(player5Points);
 		this.add(player6Points);
-		
-		this.add(player1Phase);
 	}
 
 	private void setupLayout()
