@@ -52,6 +52,7 @@ public class ScorePanel extends JPanel
 		
 		//Player Names
 		this.player1Field = new JTextField("Player 1");
+		player1Field.setHorizontalAlignment(SwingConstants.CENTER);
 		baseLayout.putConstraint(SpringLayout.WEST, player1Field, 66, SpringLayout.WEST, this);
 		this.player2Field = new JTextField("Player 2");
 		baseLayout.putConstraint(SpringLayout.NORTH, player2Field, 0, SpringLayout.NORTH, player1Field);
@@ -98,17 +99,17 @@ public class ScorePanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, player1Phase, 13, SpringLayout.SOUTH, player1Points);
 		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 10, SpringLayout.WEST, this);
 		this.player1Phase = new JSlider();
+		baseLayout.putConstraint(SpringLayout.NORTH, player1Phase, 16, SpringLayout.SOUTH, player1PhaseText);
+		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 21, SpringLayout.WEST, this);
 		player1Phase.setSnapToTicks(true);
 		player1Phase.setOrientation(SwingConstants.VERTICAL);
-		baseLayout.putConstraint(SpringLayout.NORTH, player1Phase, 17, SpringLayout.SOUTH, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 20, SpringLayout.WEST, this);
 		player1Phase.setValue(1);
 		player1Phase.setPaintLabels(true);
 		player1Phase.setPaintTicks(true);
 		player1Phase.setMinimum(10);
 		player1Phase.setMaximum(1);
 		player1Phase.setMajorTickSpacing(10);
-		player1Phase.putClientProperty(new Integer (2), new JLabel("2"));
+		//player1Phase.put(new Integer (2), new JLabel("2"));
 		
 		
 		setupPanel();
