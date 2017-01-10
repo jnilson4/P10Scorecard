@@ -111,12 +111,11 @@ public class ScorePanel extends JPanel
 		
 		//Phase Text
 		this.player1PhaseText = new JLabel("Current Phase");
-		this.player2PhaseText = new JLabel("Current Phase");
+		this.player2PhaseText = new JLabel("Current Phase");		
 		this.player3PhaseText = new JLabel("Current Phase");
-		this.player4PhaseText = new JLabel("Current Phase");
+		this.player4PhaseText = new JLabel("Current Phase");		
 		this.player5PhaseText = new JLabel("Current Phase");
 		this.player6PhaseText = new JLabel("Current Phase");
-		
 
 		setupPanel();
 		setupLayout();
@@ -229,11 +228,6 @@ public class ScorePanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, player3Phase, 136, SpringLayout.EAST, player2Phase);
 		baseLayout.putConstraint(SpringLayout.WEST, player5Phase, 129, SpringLayout.EAST, player4Phase);
 		baseLayout.putConstraint(SpringLayout.EAST, player6Phase, -72, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, player2PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.NORTH, player3PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.NORTH, player4PhaseText, 0, SpringLayout.NORTH, player3PhaseText);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player5PhaseText, -7, SpringLayout.NORTH, player5Phase);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player6PhaseText, -7, SpringLayout.NORTH, player6Phase);
 		baseLayout.putConstraint(SpringLayout.SOUTH, player1Field, -23, SpringLayout.NORTH, pointsLabel1);
 		baseLayout.putConstraint(SpringLayout.NORTH, pointsLabel2, 0, SpringLayout.NORTH, pointsLabel1);
 		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel2, -11, SpringLayout.WEST, player2Field);	
@@ -251,6 +245,11 @@ public class ScorePanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, player5PhaseText, 105, SpringLayout.EAST, player4PhaseText);
 		baseLayout.putConstraint(SpringLayout.WEST, player1Field, 67, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, player6PhaseText, -60, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, player4PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player2PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player3PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player5PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player6PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
 		titleLabel.setForeground(Color.WHITE);
 		titleLabel.setFont(new Font("Dialog", Font.BOLD, 35));
 		secondTitleLabel.setForeground(Color.WHITE);
