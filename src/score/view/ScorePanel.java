@@ -45,6 +45,22 @@ public class ScorePanel extends JPanel
 	private JLabel pointsLabel5;
 	private JLabel pointsLabel6;
 	
+	//Total Points Label
+	private JLabel totalPointsLabel1;
+	private JLabel totalPointsLabel2;
+	private JLabel totalPointsLabel3;
+	private JLabel totalPointsLabel4;
+	private JLabel totalPointsLabel5;
+	private JLabel totalPointsLabel6;
+	
+	//Total Points
+	private JLabel totalPoints1;
+	private JLabel totalPoints2;
+	private JLabel totalPoints3;
+	private JLabel totalPoints4;
+	private JLabel totalPoints5;
+	private JLabel totalPoints6;
+	
 	//Player Phases
 	private JSlider player1Phase;
 	private JSlider player2Phase;
@@ -64,6 +80,7 @@ public class ScorePanel extends JPanel
 	
 	public ScorePanel(ScoreController baseController)
 	{
+		setForeground(Color.WHITE);
 		//Layout
 		this.baseLayout = new SpringLayout();
 		this.baseController = baseController;
@@ -94,12 +111,73 @@ public class ScorePanel extends JPanel
 		this.player6Points = new JTextField(4);
 		
 		//Points Text
-		this.pointsLabel1 = new JLabel("Current Points");
-		this.pointsLabel2 = new JLabel("Current Points");
-		this.pointsLabel3 = new JLabel("Current Points");
-		this.pointsLabel4 = new JLabel("Current Points");
-		this.pointsLabel5 = new JLabel("Current Points");
-		this.pointsLabel6 = new JLabel("Current Points");
+		this.pointsLabel1 = new JLabel("Round Points");
+		this.pointsLabel2 = new JLabel("Round Points");
+		this.pointsLabel3 = new JLabel("Round Points");
+		this.pointsLabel4 = new JLabel("Round Points");
+		this.pointsLabel5 = new JLabel("Round Points");
+		this.pointsLabel6 = new JLabel("Round Points");
+		
+		//Total Points Label
+		this.totalPointsLabel1 = new JLabel("Total Points");
+		totalPointsLabel1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel1.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel1, 13, SpringLayout.SOUTH, player1Points);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel1, 0, SpringLayout.WEST, pointsLabel1);
+		this.totalPointsLabel2 = new JLabel("Total Points");
+		totalPointsLabel2.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel2.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel2, 0, SpringLayout.NORTH, totalPointsLabel1);
+		this.totalPointsLabel3 = new JLabel("Total Points");
+		totalPointsLabel3.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel3.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel3, 0, SpringLayout.NORTH, totalPointsLabel1);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel3, 0, SpringLayout.WEST, pointsLabel3);
+		this.totalPointsLabel4 = new JLabel("Total Points");
+		totalPointsLabel4.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel4.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel4, 0, SpringLayout.NORTH, totalPointsLabel1);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel4, 0, SpringLayout.WEST, pointsLabel4);
+		this.totalPointsLabel5 = new JLabel("Total Points");
+		totalPointsLabel5.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel5.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel5, 0, SpringLayout.NORTH, totalPointsLabel1);
+		this.totalPointsLabel6 = new JLabel("Total Points");
+		totalPointsLabel6.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel6.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel6, 6, SpringLayout.SOUTH, player6Points);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel6, 0, SpringLayout.WEST, pointsLabel6);
+		
+		//Total Points
+		this.totalPoints1 = new JLabel("0");
+		totalPoints1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints1.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints1, 90, SpringLayout.WEST, this);
+		this.totalPoints2 = new JLabel("0");
+		totalPoints2.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints2.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints2, 0, SpringLayout.NORTH, totalPoints1);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints2, 159, SpringLayout.EAST, totalPoints1);
+		this.totalPoints3 = new JLabel("0");
+		totalPoints3.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints3.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints3, 6, SpringLayout.SOUTH, totalPointsLabel3);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints3, 0, SpringLayout.WEST, titleLabel);
+		this.totalPoints4 = new JLabel("0");
+		totalPoints4.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints4.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints4, 6, SpringLayout.SOUTH, totalPointsLabel4);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints4, 169, SpringLayout.EAST, totalPoints3);
+		this.totalPoints5 = new JLabel("0");
+		totalPoints5.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints5.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints5, 0, SpringLayout.NORTH, totalPoints1);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints5, 176, SpringLayout.EAST, totalPoints4);
+		this.totalPoints6 = new JLabel("0");
+		totalPoints6.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints6.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints6, 0, SpringLayout.NORTH, totalPoints1);
+		baseLayout.putConstraint(SpringLayout.EAST, totalPoints6, -92, SpringLayout.EAST, this);
 		
 		//Player Phases
 		this.player1Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
@@ -111,10 +189,13 @@ public class ScorePanel extends JPanel
 		
 		//Phase Text
 		this.player1PhaseText = new JLabel("Current Phase");
+		baseLayout.putConstraint(SpringLayout.SOUTH, totalPoints1, -6, SpringLayout.NORTH, player1PhaseText);
 		this.player2PhaseText = new JLabel("Current Phase");		
+		baseLayout.putConstraint(SpringLayout.EAST, totalPointsLabel2, 0, SpringLayout.EAST, player2PhaseText);
 		this.player3PhaseText = new JLabel("Current Phase");
 		this.player4PhaseText = new JLabel("Current Phase");		
 		this.player5PhaseText = new JLabel("Current Phase");
+		baseLayout.putConstraint(SpringLayout.EAST, totalPointsLabel5, 0, SpringLayout.EAST, player5PhaseText);
 		this.player6PhaseText = new JLabel("Current Phase");
 
 		setupPanel();
@@ -160,6 +241,22 @@ public class ScorePanel extends JPanel
 		this.add(pointsLabel5);
 		this.add(pointsLabel6);
 		
+		//Total Points Label
+		this.add(totalPointsLabel1);
+		this.add(totalPointsLabel2);
+		this.add(totalPointsLabel3);
+		this.add(totalPointsLabel4);
+		this.add(totalPointsLabel5);
+		this.add(totalPointsLabel6);
+
+		//Total Points
+		this.add(totalPoints1);
+		this.add(totalPoints2);
+		this.add(totalPoints3);
+		this.add(totalPoints4);
+		this.add(totalPoints5);
+		this.add(totalPoints6);
+		
 		//Player Phases
 		this.add(player1Phase);
 		this.add(player2Phase);
@@ -167,7 +264,6 @@ public class ScorePanel extends JPanel
 		this.add(player4Phase);
 		this.add(player5Phase);
 		this.add(player6Phase);
-		
 		
 		//Phase Text
 		this.add(player1PhaseText);
@@ -341,9 +437,21 @@ public class ScorePanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
-				String playerName = "Player";
-				playerName = JOptionPane.showInputDialog("What is the players name?");
-				player1Field.setText(playerName);
+				String [] names = new String [6];
+				
+				for(int i = 0; i < 6; i++)
+				{
+					String playerName = "Player" + i+1;
+					playerName = JOptionPane.showInputDialog("What is the players name?");
+					names[i] = playerName;
+				}
+				
+				player1Field.setText(names[0]);
+				player2Field.setText(names[1]);
+				player3Field.setText(names[2]);
+				player4Field.setText(names[3]);
+				player5Field.setText(names[4]);
+				player6Field.setText(names[5]);
 			}
 		});
 	}
