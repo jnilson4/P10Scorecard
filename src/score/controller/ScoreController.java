@@ -18,9 +18,4 @@ public class ScoreController
 	{
 		JOptionPane.showMessageDialog(baseFrame, "Welcome to the Phase 10 ScoreCard!");
 	}
-	
-	public void getPlayerName()
-	{
-		
-	}
 }
