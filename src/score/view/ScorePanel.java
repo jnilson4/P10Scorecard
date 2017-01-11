@@ -20,6 +20,7 @@ public class ScorePanel extends JPanel
 	
 	//Buttons
 	private JButton addNames;
+	private JButton scoreRound;
 	
 	//Player Names
 	private JLabel player1Field;
@@ -93,6 +94,7 @@ public class ScorePanel extends JPanel
 		
 		//Buttons
 		this.addNames = new JButton("Add Player Names");
+		this.scoreRound = new JButton("Score Round");
 		
 		//Player Names
 		this.player1Field = new JLabel("Player 1");
@@ -216,6 +218,7 @@ public class ScorePanel extends JPanel
 		
 		//Buttons
 		this.add(addNames);
+		this.add(scoreRound);
 		
 		//Player Names
 		this.add(player1Field);
@@ -452,6 +455,42 @@ public class ScorePanel extends JPanel
 				player4Field.setText(names[3]);
 				player5Field.setText(names[4]);
 				player6Field.setText(names[5]);
+			}
+		});
+		
+		scoreRound.addActionListener(new ActionListener ()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				
+				String points1 = player1Points.getText();
+				totalPoints1.setText(points1);
+				player1Points.setText("");
+				
+				String points2 = player2Points.getText();
+				totalPoints2.setText(points2);
+				player2Points.setText("");
+				
+				String points3 = player3Points.getText();
+				totalPoints3.setText(points3);
+				player3Points.setText("");
+				
+				String points4 = player4Points.getText();
+				totalPoints4.setText(points4);
+				player4Points.setText("");
+				
+				String points5 = player5Points.getText();
+				totalPoints5.setText(points5);
+				player5Points.setText("");
+				
+				String points6 = player6Points.getText();
+				totalPoints6.setText(points6);
+				player6Points.setText("");
+				
+				if(totalPoints1.getText().equals(""))
+				{	
+					player1Points.setText(totalPoints1.getText());
+				}
 			}
 		});
 	}
