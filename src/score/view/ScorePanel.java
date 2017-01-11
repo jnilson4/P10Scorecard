@@ -462,36 +462,32 @@ public class ScorePanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
+				int points1 = Integer.parseInt(player1Points.getText());
+				int points2 = Integer.parseInt(totalPoints1.getText());
 				
-				String points1 = player1Points.getText();
-				totalPoints1.setText(points1);
-				player1Points.setText("");
-				
-				String points2 = player2Points.getText();
-				totalPoints2.setText(points2);
-				player2Points.setText("");
-				
-				String points3 = player3Points.getText();
-				totalPoints3.setText(points3);
-				player3Points.setText("");
-				
-				String points4 = player4Points.getText();
-				totalPoints4.setText(points4);
-				player4Points.setText("");
-				
-				String points5 = player5Points.getText();
-				totalPoints5.setText(points5);
-				player5Points.setText("");
-				
-				String points6 = player6Points.getText();
-				totalPoints6.setText(points6);
-				player6Points.setText("");
-				
-				if(totalPoints1.getText().equals(""))
-				{	
-					player1Points.setText(totalPoints1.getText());
+				if(isValidInteger(player1Points.getText()))
+				{
+					totalPoints1.setText(Integer.toString(points1 + points2));
+					player1Points.setText("");
 				}
 			}
 		});
+	}
+	
+	private boolean isValidInteger(String input)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			int successful = Integer.parseInt(input);
+			isValid = true;
+		}
+		catch(NumberFormatException userTypedSomething)
+		{
+			System.out.println("No score for this round.");
+		}
+		
+		return isValid;
 	}
 }
