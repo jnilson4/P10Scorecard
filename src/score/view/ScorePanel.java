@@ -432,8 +432,7 @@ public class ScorePanel extends JPanel
 		player6Phase.setInverted(true);
 		player6Phase.setForeground(Color.WHITE);
 	}
-	
-	
+
 	private void setupListeners()
 	{
 		addNames.addActionListener(new ActionListener ()
