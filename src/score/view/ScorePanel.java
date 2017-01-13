@@ -86,11 +86,9 @@ public class ScorePanel extends JPanel
 		this.baseLayout = new SpringLayout();
 		this.baseController = baseController;
 		
-		
 		//Labels
 		this.titleLabel = new JLabel("Phase 10");
 		this.secondTitleLabel = new JLabel("Scorecard");
-		
 		
 		//Buttons
 		this.addNames = new JButton("Add Player Names");
@@ -120,84 +118,43 @@ public class ScorePanel extends JPanel
 		this.pointsLabel5 = new JLabel("Round Points");
 		this.pointsLabel6 = new JLabel("Round Points");
 		
+		
 		//Total Points Label
 		this.totalPointsLabel1 = new JLabel("Total Points");
-		totalPointsLabel1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		totalPointsLabel1.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel1, 13, SpringLayout.SOUTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel1, 0, SpringLayout.WEST, pointsLabel1);
 		this.totalPointsLabel2 = new JLabel("Total Points");
-		totalPointsLabel2.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		totalPointsLabel2.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel2, 0, SpringLayout.NORTH, totalPointsLabel1);
 		this.totalPointsLabel3 = new JLabel("Total Points");
-		totalPointsLabel3.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		totalPointsLabel3.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel3, 0, SpringLayout.NORTH, totalPointsLabel1);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel3, 0, SpringLayout.WEST, pointsLabel3);
 		this.totalPointsLabel4 = new JLabel("Total Points");
-		totalPointsLabel4.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		totalPointsLabel4.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel4, 0, SpringLayout.NORTH, totalPointsLabel1);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel4, 0, SpringLayout.WEST, pointsLabel4);
 		this.totalPointsLabel5 = new JLabel("Total Points");
-		totalPointsLabel5.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		totalPointsLabel5.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel5, 0, SpringLayout.NORTH, totalPointsLabel1);
 		this.totalPointsLabel6 = new JLabel("Total Points");
-		totalPointsLabel6.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		totalPointsLabel6.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel6, 6, SpringLayout.SOUTH, player6Points);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel6, 0, SpringLayout.WEST, pointsLabel6);
 		
 		//Total Points
 		this.totalPoints1 = new JLabel("0");
-		totalPoints1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		totalPoints1.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPoints1, 90, SpringLayout.WEST, this);
 		this.totalPoints2 = new JLabel("0");
-		totalPoints2.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		totalPoints2.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints2, 0, SpringLayout.NORTH, totalPoints1);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPoints2, 159, SpringLayout.EAST, totalPoints1);
 		this.totalPoints3 = new JLabel("0");
-		totalPoints3.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		totalPoints3.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints3, 6, SpringLayout.SOUTH, totalPointsLabel3);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPoints3, 0, SpringLayout.WEST, titleLabel);
 		this.totalPoints4 = new JLabel("0");
-		totalPoints4.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		totalPoints4.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints4, 6, SpringLayout.SOUTH, totalPointsLabel4);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPoints4, 169, SpringLayout.EAST, totalPoints3);
 		this.totalPoints5 = new JLabel("0");
-		totalPoints5.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		totalPoints5.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints5, 0, SpringLayout.NORTH, totalPoints1);
-		baseLayout.putConstraint(SpringLayout.WEST, totalPoints5, 176, SpringLayout.EAST, totalPoints4);
 		this.totalPoints6 = new JLabel("0");
-		totalPoints6.setFont(new Font("Lucida Grande", Font.BOLD, 15));
-		totalPoints6.setForeground(Color.WHITE);
-		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints6, 0, SpringLayout.NORTH, totalPoints1);
-		baseLayout.putConstraint(SpringLayout.EAST, totalPoints6, -92, SpringLayout.EAST, this);
 		
 		//Player Phases
 		this.player1Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
+		player1Phase.setBackground(Color.GRAY);
 		this.player2Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
+		player2Phase.setBackground(Color.GRAY);
 		this.player3Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
+		player3Phase.setBackground(Color.GRAY);
 		this.player4Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
+		player4Phase.setBackground(Color.GRAY);
 		this.player5Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
+		player5Phase.setBackground(Color.GRAY);
 		this.player6Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
+		player6Phase.setBackground(Color.GRAY);
 		
 		//Phase Text
 		this.player1PhaseText = new JLabel("Current Phase");
-		baseLayout.putConstraint(SpringLayout.SOUTH, totalPoints1, -6, SpringLayout.NORTH, player1PhaseText);
-		this.player2PhaseText = new JLabel("Current Phase");		
-		baseLayout.putConstraint(SpringLayout.EAST, totalPointsLabel2, 0, SpringLayout.EAST, player2PhaseText);
+		this.player2PhaseText = new JLabel("Current Phase");
 		this.player3PhaseText = new JLabel("Current Phase");
-		this.player4PhaseText = new JLabel("Current Phase");		
+		this.player4PhaseText = new JLabel("Current Phase");
 		this.player5PhaseText = new JLabel("Current Phase");
-		baseLayout.putConstraint(SpringLayout.EAST, totalPointsLabel5, 0, SpringLayout.EAST, player5PhaseText);
 		this.player6PhaseText = new JLabel("Current Phase");
 
 		setupPanel();
@@ -280,75 +237,129 @@ public class ScorePanel extends JPanel
 
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 458, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -648, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, addNames, 10, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, addNames, -10, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, pointsLabel1, -6, SpringLayout.NORTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player1Points, 66, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player1Points, -514, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, player2Field, 1, SpringLayout.WEST, player2Points);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player2Field, -43, SpringLayout.NORTH, player2Points);
-		baseLayout.putConstraint(SpringLayout.NORTH, player2Points, 0, SpringLayout.NORTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player2Points, 109, SpringLayout.EAST, player1Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player3Field, 1, SpringLayout.WEST, player3Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player3Points, 130, SpringLayout.EAST, player2Points);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player3Field, -43, SpringLayout.NORTH, player3Points);
-		baseLayout.putConstraint(SpringLayout.NORTH, player3Points, 0, SpringLayout.NORTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player4Field, 1, SpringLayout.WEST, player4Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player4Points, 130, SpringLayout.EAST, player3Points);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player4Field, -43, SpringLayout.NORTH, player4Points);
-		baseLayout.putConstraint(SpringLayout.NORTH, player4Points, 0, SpringLayout.NORTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player5Field, 1, SpringLayout.WEST, player5Points);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player5Field, -43, SpringLayout.NORTH, player5Points);
-		baseLayout.putConstraint(SpringLayout.NORTH, player5Points, 0, SpringLayout.NORTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.EAST, player5Points, -125, SpringLayout.WEST, player6Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player6Field, 1, SpringLayout.WEST, player6Points);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player6Field, -43, SpringLayout.NORTH, player6Points);
-		baseLayout.putConstraint(SpringLayout.NORTH, player6Points, 0, SpringLayout.NORTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.EAST, player6Points, -69, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, player1Phase, 13, SpringLayout.SOUTH, player1Points);
-		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 10, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, player1Phase, 264, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 69, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 468, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -634, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, secondTitleLabel, 6, SpringLayout.SOUTH, titleLabel);
 		baseLayout.putConstraint(SpringLayout.WEST, secondTitleLabel, 511, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel1, 56, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, player2Phase, 0, SpringLayout.NORTH, player1Phase);
-		baseLayout.putConstraint(SpringLayout.NORTH, player3Phase, 0, SpringLayout.NORTH, player1Phase);
-		baseLayout.putConstraint(SpringLayout.NORTH, player4Phase, 0, SpringLayout.NORTH, player1Phase);
-		baseLayout.putConstraint(SpringLayout.NORTH, player5Phase, 0, SpringLayout.NORTH, player1Phase);
-		baseLayout.putConstraint(SpringLayout.NORTH, player6Phase, 0, SpringLayout.NORTH, player1Phase);
-		baseLayout.putConstraint(SpringLayout.NORTH, player1PhaseText, 56, SpringLayout.SOUTH, player1Points);
+		baseLayout.putConstraint(SpringLayout.WEST, addNames, 413, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, addNames, -44, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, scoreRound, 0, SpringLayout.NORTH, addNames);
+		baseLayout.putConstraint(SpringLayout.WEST, scoreRound, 6, SpringLayout.EAST, addNames);
+		baseLayout.putConstraint(SpringLayout.WEST, player2Field, 235, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player3Field, 424, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player4Field, 613, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player5Field, 791, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player6Field, 974, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player1Points, -1, SpringLayout.WEST, player1Field);
+		baseLayout.putConstraint(SpringLayout.WEST, player2Points, -1, SpringLayout.WEST, player2Field);
+		baseLayout.putConstraint(SpringLayout.WEST, player3Points, -1, SpringLayout.WEST, player3Field);
+		baseLayout.putConstraint(SpringLayout.WEST, player4Points, -1, SpringLayout.WEST, player4Field);
+		baseLayout.putConstraint(SpringLayout.WEST, player5Points, -1, SpringLayout.WEST, player5Field);
+		baseLayout.putConstraint(SpringLayout.NORTH, player6Points, 0, SpringLayout.NORTH, player5Points);
+		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel1, -7, SpringLayout.WEST, player1Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, pointsLabel1, -6, SpringLayout.NORTH, player1Points);
+		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel2, -7, SpringLayout.WEST, player2Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, pointsLabel2, -546, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, player2Points, 6, SpringLayout.SOUTH, pointsLabel2);
+		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel3, -7, SpringLayout.WEST, player3Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, pointsLabel3, -546, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, player3Points, 6, SpringLayout.SOUTH, pointsLabel3);
+		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel4, -7, SpringLayout.WEST, player4Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, pointsLabel4, -546, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, player4Points, 6, SpringLayout.SOUTH, pointsLabel4);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player5Field, -23, SpringLayout.NORTH, pointsLabel5);
+		baseLayout.putConstraint(SpringLayout.NORTH, player5Points, 6, SpringLayout.SOUTH, pointsLabel5);
+		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel5, -7, SpringLayout.WEST, player5Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, pointsLabel5, -546, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player6Field, -23, SpringLayout.NORTH, pointsLabel6);
+		baseLayout.putConstraint(SpringLayout.WEST, player6Points, 6, SpringLayout.WEST, pointsLabel6);
+		baseLayout.putConstraint(SpringLayout.NORTH, pointsLabel6, 0, SpringLayout.NORTH, pointsLabel5);
+		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel6, -7, SpringLayout.WEST, player6Field);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel1, -10, SpringLayout.WEST, player1Points);
+		totalPointsLabel1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel1.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel1, 0, SpringLayout.NORTH, totalPointsLabel2);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel2, -11, SpringLayout.WEST, player2Field);
+		totalPointsLabel2.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel2.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel3, -11, SpringLayout.WEST, player3Field);
+		totalPointsLabel3.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel3.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel4, -11, SpringLayout.WEST, player4Field);
+		totalPointsLabel4.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel4.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel5, -11, SpringLayout.WEST, player5Field);
+		totalPointsLabel5.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel5.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPointsLabel6, 192, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPointsLabel6, -4, SpringLayout.WEST, pointsLabel6);
+		totalPointsLabel6.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		totalPointsLabel6.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints1, 34, SpringLayout.WEST, totalPointsLabel1);
+		totalPoints1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints1.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.SOUTH, totalPointsLabel2, -2, SpringLayout.NORTH, totalPoints2);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints1, 0, SpringLayout.NORTH, totalPoints2);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints2, 217, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints2, 23, SpringLayout.WEST, player2Field);
+		totalPoints2.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints3, 221, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints3, 23, SpringLayout.WEST, player3Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, totalPointsLabel3, -6, SpringLayout.NORTH, totalPoints3);
+		totalPoints3.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints3.setForeground(Color.WHITE);
+		totalPoints2.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints4, 221, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints4, 23, SpringLayout.WEST, player4Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, totalPointsLabel4, -6, SpringLayout.NORTH, totalPoints4);
+		totalPoints4.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints4.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.NORTH, totalPoints5, 217, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints5, 23, SpringLayout.WEST, player5Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, totalPointsLabel5, -2, SpringLayout.NORTH, totalPoints5);
+		totalPoints5.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints5.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, totalPoints6, 30, SpringLayout.WEST, pointsLabel6);
+		totalPoints6.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		totalPoints6.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 2, SpringLayout.WEST, player1Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player1Phase, -144, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player2Phase, 2, SpringLayout.WEST, player2Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player2Phase, -144, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player3Phase, 2, SpringLayout.WEST, player3Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player3Phase, -71, SpringLayout.NORTH, addNames);
+		baseLayout.putConstraint(SpringLayout.WEST, player4Phase, 2, SpringLayout.WEST, player4Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player4Phase, -71, SpringLayout.NORTH, scoreRound);
+		baseLayout.putConstraint(SpringLayout.WEST, player5Phase, 2, SpringLayout.WEST, player5Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player5Phase, -144, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player6Phase, 2, SpringLayout.WEST, player6Field);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player6Phase, -144, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, player1PhaseText, 57, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, player1PhaseText, -6, SpringLayout.NORTH, player1Phase);
-		baseLayout.putConstraint(SpringLayout.WEST, player2Phase, 115, SpringLayout.EAST, player1Phase);
-		baseLayout.putConstraint(SpringLayout.WEST, player4Phase, 136, SpringLayout.EAST, player3Phase);
-		baseLayout.putConstraint(SpringLayout.WEST, player3Phase, 136, SpringLayout.EAST, player2Phase);
-		baseLayout.putConstraint(SpringLayout.WEST, player5Phase, 129, SpringLayout.EAST, player4Phase);
-		baseLayout.putConstraint(SpringLayout.EAST, player6Phase, -72, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, player2Phase, 7, SpringLayout.SOUTH, player2PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player1PhaseText, 0, SpringLayout.NORTH, player2PhaseText);
+		baseLayout.putConstraint(SpringLayout.WEST, player2PhaseText, -10, SpringLayout.WEST, player2Field);
+		baseLayout.putConstraint(SpringLayout.NORTH, player2PhaseText, 243, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, player3PhaseText, 3, SpringLayout.SOUTH, totalPoints3);
+		baseLayout.putConstraint(SpringLayout.WEST, player3PhaseText, -10, SpringLayout.WEST, player3Field);
+		baseLayout.putConstraint(SpringLayout.NORTH, player3Phase, 7, SpringLayout.SOUTH, player3PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player4PhaseText, 3, SpringLayout.SOUTH, totalPoints4);
+		baseLayout.putConstraint(SpringLayout.WEST, player4PhaseText, -10, SpringLayout.WEST, player4Field);
+		baseLayout.putConstraint(SpringLayout.NORTH, player4Phase, 7, SpringLayout.SOUTH, player4PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player5PhaseText, 7, SpringLayout.SOUTH, totalPoints5);
+		baseLayout.putConstraint(SpringLayout.WEST, player5PhaseText, -10, SpringLayout.WEST, player5Field);
+		baseLayout.putConstraint(SpringLayout.NORTH, player5Phase, 7, SpringLayout.SOUTH, player5PhaseText);
+		baseLayout.putConstraint(SpringLayout.NORTH, player6PhaseText, 243, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player6PhaseText, -10, SpringLayout.WEST, player6Field);
+		baseLayout.putConstraint(SpringLayout.NORTH, player6Phase, 7, SpringLayout.SOUTH, player6PhaseText);
+		baseLayout.putConstraint(SpringLayout.SOUTH, totalPoints6, -7, SpringLayout.NORTH, player6PhaseText);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player1Points, -514, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player2Field, -43, SpringLayout.NORTH, player2Points);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player3Field, -43, SpringLayout.NORTH, player3Points);
+		baseLayout.putConstraint(SpringLayout.SOUTH, player4Field, -43, SpringLayout.NORTH, player4Points);
+		baseLayout.putConstraint(SpringLayout.NORTH, player1Phase, 264, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, player1Phase, 69, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, player1Field, -23, SpringLayout.NORTH, pointsLabel1);
-		baseLayout.putConstraint(SpringLayout.NORTH, pointsLabel2, 0, SpringLayout.NORTH, pointsLabel1);
-		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel2, -11, SpringLayout.WEST, player2Field);	
-		baseLayout.putConstraint(SpringLayout.NORTH, pointsLabel3, 0, SpringLayout.NORTH, pointsLabel1);
-		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel3, -11, SpringLayout.WEST, player3Field);
-		baseLayout.putConstraint(SpringLayout.NORTH, pointsLabel4, 0, SpringLayout.NORTH, pointsLabel1);
-		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel4, -11, SpringLayout.WEST, player4Field);
-		baseLayout.putConstraint(SpringLayout.NORTH, pointsLabel5, 0, SpringLayout.NORTH, pointsLabel1);
-		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel5, -11, SpringLayout.WEST, player5Field);
-		baseLayout.putConstraint(SpringLayout.NORTH, pointsLabel6, 0, SpringLayout.NORTH, pointsLabel1);
-		baseLayout.putConstraint(SpringLayout.WEST, pointsLabel6, -11, SpringLayout.WEST, player6Field);
-		baseLayout.putConstraint(SpringLayout.WEST, player2PhaseText, 91, SpringLayout.EAST, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.WEST, player3PhaseText, 112, SpringLayout.EAST, player2PhaseText);
-		baseLayout.putConstraint(SpringLayout.WEST, player4PhaseText, 112, SpringLayout.EAST, player3PhaseText);
-		baseLayout.putConstraint(SpringLayout.WEST, player5PhaseText, 105, SpringLayout.EAST, player4PhaseText);
 		baseLayout.putConstraint(SpringLayout.WEST, player1Field, 67, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, player6PhaseText, -60, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, player4PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.NORTH, player2PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.NORTH, player3PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.NORTH, player5PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
-		baseLayout.putConstraint(SpringLayout.NORTH, player6PhaseText, 1, SpringLayout.NORTH, player1PhaseText);
 		titleLabel.setForeground(Color.WHITE);
 		titleLabel.setFont(new Font("Dialog", Font.BOLD, 35));
 		secondTitleLabel.setForeground(Color.WHITE);
@@ -461,6 +472,7 @@ public class ScorePanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
+				//Player 1
 				int points1 = Integer.parseInt(player1Points.getText());
 				int points2 = Integer.parseInt(totalPoints1.getText());
 				
@@ -468,6 +480,56 @@ public class ScorePanel extends JPanel
 				{
 					totalPoints1.setText(Integer.toString(points1 + points2));
 					player1Points.setText("");
+				}
+				
+				//Player 2
+				int points3 = Integer.parseInt(player2Points.getText());
+				int points4 = Integer.parseInt(totalPoints2.getText());
+				
+				if(isValidInteger(player2Points.getText()))
+				{
+					totalPoints2.setText(Integer.toString(points3 + points4));
+					player2Points.setText("");
+				}
+				
+				//Player 3
+				int points5 = Integer.parseInt(player3Points.getText());
+				int points6 = Integer.parseInt(totalPoints3.getText());
+				
+				if(isValidInteger(player3Points.getText()))
+				{
+					totalPoints3.setText(Integer.toString(points5 + points6));
+					player3Points.setText("");
+				}
+				
+				//Player4
+				int points7 = Integer.parseInt(player4Points.getText());
+				int points8 = Integer.parseInt(totalPoints4.getText());
+				
+				if(isValidInteger(player4Points.getText()))
+				{
+					totalPoints4.setText(Integer.toString(points7 + points8));
+					player4Points.setText("");
+				}
+				
+				//Player 5
+				int points9 = Integer.parseInt(player5Points.getText());
+				int points10 = Integer.parseInt(totalPoints5.getText());
+				
+				if(isValidInteger(player5Points.getText()))
+				{
+					totalPoints5.setText(Integer.toString(points9 + points10));
+					player5Points.setText("");
+				}
+				
+				//Player 6
+				int points11 = Integer.parseInt(player6Points.getText());
+				int points12 = Integer.parseInt(totalPoints6.getText());
+				
+				if(isValidInteger(player6Points.getText()))
+				{
+					totalPoints6.setText(Integer.toString(points11 + points12));
+					player6Points.setText("");
 				}
 			}
 		});
@@ -485,6 +547,7 @@ public class ScorePanel extends JPanel
 		catch(NumberFormatException userTypedSomething)
 		{
 			System.out.println("No score for this round.");
+			player1Points.setText("");
 		}
 		
 		return isValid;

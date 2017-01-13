@@ -3,6 +3,7 @@ package score.view;
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import score.controller.ScoreController;
+import javax.swing.ImageIcon;
 
 public class ScoreFrame extends JFrame
 {
@@ -25,5 +26,9 @@ public class ScoreFrame extends JFrame
 		this.setSize(new Dimension(1100, 700));
 		this.setVisible(true);
 		this.setResizable(false);
+		
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		JFrame frame = new JFrame("Phase 10 Scorecard");
+		frame.setIconImage(new ImageIcon("/score/view/images/p10icon.jpg").getImage());
 	}
 }
