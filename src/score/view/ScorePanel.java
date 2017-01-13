@@ -8,6 +8,12 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Program that can be used to keep score for the card game Phase 10.
+ * 
+ * @author Jake Nilson
+ */
+
 public class ScorePanel extends JPanel
 {
 	//Layout
@@ -445,7 +451,7 @@ public class ScorePanel extends JPanel
 	}
 
 	private void setupListeners()
-	{
+	{	
 		addNames.addActionListener(new ActionListener ()
 		{
 			public void actionPerformed(ActionEvent selection)
@@ -480,6 +486,7 @@ public class ScorePanel extends JPanel
 				{
 					totalPoints1.setText(Integer.toString(points1 + points2));
 					player1Points.setText("");
+					repaint();
 				}
 				
 				//Player 2
