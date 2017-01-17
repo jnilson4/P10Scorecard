@@ -5,8 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import score.controller.ScoreController;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 /**
  * Program that can be used to keep score for the card game Phase 10.
@@ -174,7 +173,6 @@ public class ScorePanel extends JPanel
 		this.setLayout(baseLayout);
 		this.setPreferredSize(new Dimension(1100, 700));
 		this.setBackground(Color.GRAY);
-	
 		//Titles
 		this.add(titleLabel);
 		this.add(secondTitleLabel);
@@ -486,7 +484,10 @@ public class ScorePanel extends JPanel
 				{
 					totalPoints1.setText(Integer.toString(points1 + points2));
 					player1Points.setText("");
-					repaint();
+				}
+				else 
+				{
+					player1Points.setText("");
 				}
 				
 				//Player 2
@@ -540,6 +541,66 @@ public class ScorePanel extends JPanel
 				}
 			}
 		});
+	
+		player1Field.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				String nameOfPlayer = "";
+				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
+				player1Field.setText(nameOfPlayer);
+			}
+		});	
+		
+		player2Field.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				String nameOfPlayer = "";
+				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
+				player2Field.setText(nameOfPlayer);
+			}
+		});	
+		
+		player3Field.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				String nameOfPlayer = "";
+				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
+				player3Field.setText(nameOfPlayer);
+			}
+		});
+		
+		player4Field.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				String nameOfPlayer = "";
+				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
+				player4Field.setText(nameOfPlayer);
+			}
+		});	
+		
+		player5Field.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				String nameOfPlayer = "";
+				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
+				player5Field.setText(nameOfPlayer);
+			}
+		});	
+		
+		player6Field.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				String nameOfPlayer = "";
+				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
+				player6Field.setText(nameOfPlayer);
+			}
+		});	
 	}
 	
 	private boolean isValidInteger(String input)
@@ -553,8 +614,7 @@ public class ScorePanel extends JPanel
 		}
 		catch(NumberFormatException userTypedSomething)
 		{
-			System.out.println("No score for this round.");
-			player1Points.setText("");
+			System.out.print("No score for this round.");
 		}
 		
 		return isValid;
