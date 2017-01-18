@@ -5,6 +5,11 @@ import java.awt.Dimension;
 import score.controller.ScoreController;
 import javax.swing.ImageIcon;
 
+/**
+ * JFrame for the program.
+ * @author Jake Nilson
+ */
+
 public class ScoreFrame extends JFrame
 {
 	private ScoreController baseController;
@@ -21,6 +26,7 @@ public class ScoreFrame extends JFrame
 	
 	private void setupFrame()
 	{
+		//Sets as visible and sets the size of the Frame.
 		this.setContentPane(appPanel);
 		this.setTitle("Phase 10 Scorecard");
 		this.setSize(new Dimension(1100, 700));

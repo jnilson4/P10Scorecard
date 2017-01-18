@@ -1,5 +1,6 @@
 package score.model;
 
-public class Score {
-
+public class Score 
+{
+	
 }

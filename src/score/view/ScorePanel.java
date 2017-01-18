@@ -9,7 +9,6 @@ import java.awt.event.*;
 
 /**
  * Program that can be used to keep score for the card game Phase 10.
- * 
  * @author Jake Nilson
  */
 
@@ -22,6 +21,8 @@ public class ScorePanel extends JPanel
 	//Labels
 	private JLabel titleLabel;
 	private JLabel secondTitleLabel;
+	private JLabel roundNumber;
+	private int round;
 	
 	//Buttons
 	private JButton addNames;
@@ -94,6 +95,8 @@ public class ScorePanel extends JPanel
 		//Labels
 		this.titleLabel = new JLabel("Phase 10");
 		this.secondTitleLabel = new JLabel("Scorecard");
+		this.round = 1;
+		this.roundNumber = new JLabel("ROUND " + round);
 		
 		//Buttons
 		this.addNames = new JButton("Add Player Names");
@@ -109,6 +112,7 @@ public class ScorePanel extends JPanel
 		
 		//Player Points
 		this.player1Points = new JTextField(4);
+		this.player1Points.setName("points1");
 		this.player2Points = new JTextField(4);
 		this.player3Points = new JTextField(4);
 		this.player4Points = new JTextField(4);
@@ -142,17 +146,11 @@ public class ScorePanel extends JPanel
 		
 		//Player Phases
 		this.player1Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
-		player1Phase.setBackground(Color.GRAY);
-		this.player2Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
-		player2Phase.setBackground(Color.GRAY);
-		this.player3Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
-		player3Phase.setBackground(Color.GRAY);
-		this.player4Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
-		player4Phase.setBackground(Color.GRAY);
+		this.player2Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);		
+		this.player3Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);		
+		this.player4Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);		
 		this.player5Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
-		player5Phase.setBackground(Color.GRAY);
 		this.player6Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
-		player6Phase.setBackground(Color.GRAY);
 		
 		//Phase Text
 		this.player1PhaseText = new JLabel("Current Phase");
@@ -173,10 +171,11 @@ public class ScorePanel extends JPanel
 		this.setLayout(baseLayout);
 		this.setPreferredSize(new Dimension(1100, 700));
 		this.setBackground(Color.GRAY);
+		
 		//Titles
 		this.add(titleLabel);
 		this.add(secondTitleLabel);
-		
+		this.add(roundNumber);
 		//Buttons
 		this.add(addNames);
 		this.add(scoreRound);
@@ -446,10 +445,20 @@ public class ScorePanel extends JPanel
 		player6Phase.setPaintLabels(true);
 		player6Phase.setInverted(true);
 		player6Phase.setForeground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.SOUTH, roundNumber, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, roundNumber, -10, SpringLayout.EAST, this);
+		roundNumber.setForeground(Color.WHITE);
+		player1Phase.setBackground(Color.GRAY);
+		player2Phase.setBackground(Color.GRAY);
+		player3Phase.setBackground(Color.GRAY);
+		player4Phase.setBackground(Color.GRAY);
+		player5Phase.setBackground(Color.GRAY);
+		player6Phase.setBackground(Color.GRAY);
 	}
 
 	private void setupListeners()
 	{	
+		//On click of the addNames button, a prompt asks the user for the names of the players and sets those names to the player names on the view.
 		addNames.addActionListener(new ActionListener ()
 		{
 			public void actionPerformed(ActionEvent selection)
@@ -469,19 +478,56 @@ public class ScorePanel extends JPanel
 				player4Field.setText(names[3]);
 				player5Field.setText(names[4]);
 				player6Field.setText(names[5]);
+				
+				for(int i = 0; i < names.length; i++)
+				{
+					if(names[0] == null)
+					{
+						player1Field.setText("--");
+					}
+					
+					if(names [1] == null)
+					{
+						player2Field.setText("--");
+					}
+					
+					if(names[2] == null)
+					{
+						player3Field.setText("--");
+					}
+					
+					if(names[3] == null)
+					{
+						player4Field.setText("--");
+					}
+					
+					if(names[4] == null)
+					{
+						player5Field.setText("--");
+					}
+					
+					if(names[5] == null)
+					{
+						player6Field.setText("--");
+					}
+				}
 			}
 		});
 		
+		//Takes the points from the input and adds those points to the total points on click from the scoreRound button.
 		scoreRound.addActionListener(new ActionListener ()
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
-				//Player 1
-				int points1 = Integer.parseInt(player1Points.getText());
-				int points2 = Integer.parseInt(totalPoints1.getText());
+				round += 1;
+				roundNumber.setText("ROUND " + round);
 				
+				//Player 1
 				if(isValidInteger(player1Points.getText()))
 				{
+					int points1 = Integer.parseInt(player1Points.getText());
+					int points2 = Integer.parseInt(totalPoints1.getText());
+					
 					totalPoints1.setText(Integer.toString(points1 + points2));
 					player1Points.setText("");
 				}
@@ -490,119 +536,206 @@ public class ScorePanel extends JPanel
 					player1Points.setText("");
 				}
 				
-				//Player 2
-				int points3 = Integer.parseInt(player2Points.getText());
-				int points4 = Integer.parseInt(totalPoints2.getText());
-				
+				//Player2
 				if(isValidInteger(player2Points.getText()))
 				{
+					int points3 = Integer.parseInt(player2Points.getText());
+					int points4 = Integer.parseInt(totalPoints2.getText());
+					
 					totalPoints2.setText(Integer.toString(points3 + points4));
 					player2Points.setText("");
 				}
+				else
+				{
+					player2Points.setText("");
+				}
 				
-				//Player 3
-				int points5 = Integer.parseInt(player3Points.getText());
-				int points6 = Integer.parseInt(totalPoints3.getText());
-				
+				//Player3
 				if(isValidInteger(player3Points.getText()))
 				{
+					int points5 = Integer.parseInt(player3Points.getText());
+					int points6 = Integer.parseInt(totalPoints3.getText());
+					
 					totalPoints3.setText(Integer.toString(points5 + points6));
+					player3Points.setText("");
+				}
+				else
+				{
 					player3Points.setText("");
 				}
 				
 				//Player4
-				int points7 = Integer.parseInt(player4Points.getText());
-				int points8 = Integer.parseInt(totalPoints4.getText());
-				
 				if(isValidInteger(player4Points.getText()))
 				{
+					int points7 = Integer.parseInt(player4Points.getText());
+					int points8 = Integer.parseInt(totalPoints4.getText());
+					
 					totalPoints4.setText(Integer.toString(points7 + points8));
+					player4Points.setText("");
+				}
+				else
+				{
 					player4Points.setText("");
 				}
 				
 				//Player 5
-				int points9 = Integer.parseInt(player5Points.getText());
-				int points10 = Integer.parseInt(totalPoints5.getText());
-				
 				if(isValidInteger(player5Points.getText()))
 				{
+					int points9 = Integer.parseInt(player5Points.getText());
+					int points10 = Integer.parseInt(totalPoints5.getText());
+					
 					totalPoints5.setText(Integer.toString(points9 + points10));
+					player5Points.setText("");
+				}
+				else
+				{
 					player5Points.setText("");
 				}
 				
 				//Player 6
-				int points11 = Integer.parseInt(player6Points.getText());
-				int points12 = Integer.parseInt(totalPoints6.getText());
-				
 				if(isValidInteger(player6Points.getText()))
 				{
+					int points11 = Integer.parseInt(player6Points.getText());
+					int points12 = Integer.parseInt(totalPoints6.getText());
+					
 					totalPoints6.setText(Integer.toString(points11 + points12));
+					player6Points.setText("");
+				}
+				else
+				{
 					player6Points.setText("");
 				}
 			}
 		});
 	
+		//On click of the Player Name, a prompt asks the user what to change the name to and sets the name as the users response.
 		player1Field.addMouseListener(new MouseAdapter()
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
 				String nameOfPlayer = "";
 				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
-				player1Field.setText(nameOfPlayer);
+				
+				if(nameOfPlayer == null || nameOfPlayer.equals(""))
+				{
+					player1Field.setText("Player 1");
+				}
+				else
+				{
+					player1Field.setText(nameOfPlayer);
+				}
+				
+				repaint();
 			}
 		});	
 		
+		//On click of the Player Name, a prompt asks the user what to change the name to and sets the name as the users response.
 		player2Field.addMouseListener(new MouseAdapter()
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
 				String nameOfPlayer = "";
 				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
-				player2Field.setText(nameOfPlayer);
+				
+				if(nameOfPlayer == null || nameOfPlayer.equals(""))
+				{
+					player2Field.setText("Player 2");
+				}
+				else
+				{
+					player2Field.setText(nameOfPlayer);
+				}
+				
+				repaint();
 			}
 		});	
 		
+		//On click of the Player Name, a prompt asks the user what to change the name to and sets the name as the users response.
 		player3Field.addMouseListener(new MouseAdapter()
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
 				String nameOfPlayer = "";
 				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
-				player3Field.setText(nameOfPlayer);
+				
+				if(nameOfPlayer == null || nameOfPlayer.equals(""))
+				{
+					player3Field.setText("Player 3");
+				}
+				else
+				{
+					player3Field.setText(nameOfPlayer);
+				}
+				
+				repaint();
 			}
 		});
 		
+		//On click of the Player Name, a prompt asks the user what to change the name to and sets the name as the users response.
 		player4Field.addMouseListener(new MouseAdapter()
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
 				String nameOfPlayer = "";
 				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
-				player4Field.setText(nameOfPlayer);
+				
+				if(nameOfPlayer == null || nameOfPlayer.equals(""))
+				{
+					player4Field.setText("Player 4");
+				}
+				else
+				{
+					player4Field.setText(nameOfPlayer);
+				}
+				
+				repaint();
 			}
 		});	
 		
+		//On click of the Player Name, a prompt asks the user what to change the name to and sets the name as the users response.
 		player5Field.addMouseListener(new MouseAdapter()
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
 				String nameOfPlayer = "";
 				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
-				player5Field.setText(nameOfPlayer);
+				
+				if(nameOfPlayer == null || nameOfPlayer.equals(""))
+				{
+					player5Field.setText("Player 5");
+				}
+				else
+				{
+					player5Field.setText(nameOfPlayer);
+				}
+				
+				repaint();
 			}
 		});	
 		
+		//On click of the Player Name, a prompt asks the user what to change the name to and sets the name as the users response.
 		player6Field.addMouseListener(new MouseAdapter()
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
 				String nameOfPlayer = "";
 				nameOfPlayer = JOptionPane.showInputDialog("What is the players name?");
-				player6Field.setText(nameOfPlayer);
+				
+				if(nameOfPlayer == null || nameOfPlayer.equals(""))
+				{
+					player6Field.setText("Player 6");
+				}
+				else
+				{
+					player6Field.setText(nameOfPlayer);
+				}
+				
+				repaint();
 			}
 		});	
 	}
 	
+	//Checks the input to see if its an integer or not. Catches the NumberFormatException.
 	private boolean isValidInteger(String input)
 	{
 		boolean isValid = false;
