@@ -481,32 +481,32 @@ public class ScorePanel extends JPanel
 				
 				for(int i = 0; i < names.length; i++)
 				{
-					if(names[0] == null)
+					if(names[0] == null || names[0].equals(""))
 					{
 						player1Field.setText("--");
 					}
 					
-					if(names [1] == null)
+					if(names [1] == null || names[1].equals(""))
 					{
 						player2Field.setText("--");
 					}
 					
-					if(names[2] == null)
+					if(names[2] == null || names[2].equals(""))
 					{
 						player3Field.setText("--");
 					}
 					
-					if(names[3] == null)
+					if(names[3] == null || names[3].equals(""))
 					{
 						player4Field.setText("--");
 					}
 					
-					if(names[4] == null)
+					if(names[4] == null || names[4].equals(""))
 					{
 						player5Field.setText("--");
 					}
 					
-					if(names[5] == null)
+					if(names[5] == null || names[5].equals(""))
 					{
 						player6Field.setText("--");
 					}
