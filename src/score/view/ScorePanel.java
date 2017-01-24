@@ -509,6 +509,12 @@ public class ScorePanel extends JPanel
 					if(names[5] == null || names[5].equals(""))
 					{
 						player6Field.setText("--");
+						player6Points.setVisible(false);
+						player6Phase.setVisible(false);
+						pointsLabel6.setVisible(false);
+						totalPointsLabel6.setVisible(false);
+						totalPoints6.setVisible(false);
+						player6PhaseText.setVisible(false);
 					}
 				}
 			}
