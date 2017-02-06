@@ -28,16 +28,16 @@ public class ScoreController
 		int answer = 0;
 		
 		JOptionPane.showMessageDialog(baseFrame, "Welcome to the Phase 10 ScoreCard!");
-//		answer = Integer.parseInt(JOptionPane.showInputDialog(baseFrame, "How many players?"));
-//		
-//		if(answer >=6 && answer < 0)
-//		{
-//			totalPlayers = answer;
-//		}
-//		else
-//		{
-//			JOptionPane.showMessageDialog(baseFrame, "The max number of players is 6. Please enter in a number less than 6.");
-//			answer = Integer.parseInt(JOptionPane.showInputDialog(baseFrame, "How many players?"));
-//		}
+		answer = Integer.parseInt(JOptionPane.showInputDialog(baseFrame, "How many players?"));
+		
+		if(answer <=6 && answer > 0)
+		{
+			totalPlayers = answer;
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(baseFrame, "The max number of players is 6. Please enter in a number less than 6.");
+			answer = Integer.parseInt(JOptionPane.showInputDialog(baseFrame, "How many players?"));
+		}
 	}
 }

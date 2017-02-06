@@ -151,7 +151,7 @@ public class ScorePanel extends JPanel
 		this.player4Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);		
 		this.player5Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
 		this.player6Phase = new JSlider(JSlider.VERTICAL, 1, 10, 1);
-		
+	
 		//Phase Text
 		this.player1PhaseText = new JLabel("Current Phase");
 		this.player2PhaseText = new JLabel("Current Phase");
